@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "a3da02fb-5e5f-4db6-87cd-e99244f0d2ed",
+		"name": "task-hypermedialabs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": {
+						"tokenSecret": "INSC16WlXPZdHmDUkZQAxIdR26ElrBaSJfrZehpDFpYmx",
+						"token": "1376838019425181696-23wZjjA1A0owenljlhhlyuxFlFY0j4",
+						"consumerSecret": "X408Ozlu87c3f06EEDiGOOzw8xMc5wL9y9NEQb3CaoGCSmjaMV",
+						"consumerKey": "JCnDKTtyXkieftepT3qrvB2pM",
+						"verifier": "",
+						"addParamsToHeader": true,
+						"signatureMethod": "HMAC-SHA1",
+						"version": "1.0",
+						"addEmptyParamsToSign": false
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin1@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "ahmed",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": "{{url}}/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "{{url}}/auth/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "user-profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/auth/user-profile"
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/auth/search"
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "categories",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "{{url}}/auth/search"
+			},
+			"response": []
+		}
+	]
+}
